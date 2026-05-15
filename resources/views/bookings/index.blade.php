@@ -8,28 +8,39 @@
    class="btn btn-primary mb-3">
 
     Tambah Booking
+
 </a>
 
 @if(session('success'))
 
 <div class="alert alert-success">
+
     {{ session('success') }}
+
 </div>
 
 @endif
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-hover align-middle">
 
     <thead class="table-dark">
 
         <tr>
-            <th width="50">ID</th>
+
+            <th width="60">ID</th>
+
             <th>User</th>
+
             <th>Equipment</th>
-            <th>Tanggal Booking</th>
-            <th>Tanggal Kembali</th>
+
+            <th width="180">Tanggal Booking</th>
+
+            <th width="180">Tanggal Kembali</th>
+
             <th width="150">Status</th>
+
             <th width="200">Action</th>
+
         </tr>
 
     </thead>
@@ -40,34 +51,60 @@
 
         <tr>
 
-            <td>{{ $booking->id }}</td>
+            <td>
 
-            <td>{{ $booking->user->name }}</td>
+                {{ $booking->id }}
 
-            <td>{{ $booking->equipment->equipment_name }}</td>
+            </td>
 
-            <td>{{ $booking->booking_date }}</td>
+            <td>
 
-            <td>{{ $booking->return_date }}</td>
+                {{ $booking->user->name }}
+
+            </td>
+
+            <td>
+
+                {{ $booking->equipment->equipment_name }}
+
+            </td>
+
+            <td>
+
+                {{ \Carbon\Carbon::parse($booking->booking_date)->format('d M Y H:i') }}
+
+            </td>
+
+            <td>
+
+                {{ \Carbon\Carbon::parse($booking->return_date)->format('d M Y H:i') }}
+
+            </td>
 
             <td>
 
                 @if($booking->status == 'pending')
 
                     <span class="badge bg-warning text-dark">
+
                         Pending
+
                     </span>
 
                 @elseif($booking->status == 'approved')
 
                     <span class="badge bg-primary">
+
                         Approved
+
                     </span>
 
                 @elseif($booking->status == 'returned')
 
                     <span class="badge bg-success">
+
                         Returned
+
                     </span>
 
                 @endif
@@ -77,9 +114,10 @@
             <td>
 
                 <a href="{{ route('bookings.edit', $booking->id) }}"
-                   class="btn btn-warning btn-sm">
+                   class="btn btn-warning btn-sm me-1">
 
                     Edit
+
                 </a>
 
                 <form
@@ -96,6 +134,7 @@
                         onclick="return confirm('Yakin ingin menghapus booking ini?')">
 
                         Delete
+
                     </button>
 
                 </form>
@@ -108,7 +147,8 @@
 
         <tr>
 
-            <td colspan="7" class="text-center">
+            <td colspan="7"
+                class="text-center">
 
                 Data booking belum tersedia
 

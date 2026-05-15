@@ -8,27 +8,37 @@
    class="btn btn-primary mb-3">
 
     Tambah Equipment
+
 </a>
 
 @if(session('success'))
 
 <div class="alert alert-success">
+
     {{ session('success') }}
+
 </div>
 
 @endif
 
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-hover align-middle">
 
     <thead class="table-dark">
 
         <tr>
+
             <th width="100">Kode</th>
+
             <th>Nama Equipment</th>
+
             <th>Kategori</th>
+
             <th width="100">Stock</th>
+
             <th width="150">Status</th>
+
             <th width="200">Action</th>
+
         </tr>
 
     </thead>
@@ -39,32 +49,54 @@
 
         <tr>
 
-            <td>{{ $equipment->equipment_code }}</td>
+            <td>
 
-            <td>{{ $equipment->equipment_name }}</td>
+                {{ $equipment->equipment_code }}
 
-            <td>{{ $equipment->category }}</td>
+            </td>
 
-            <td>{{ $equipment->stock }}</td>
+            <td>
+
+                {{ $equipment->equipment_name }}
+
+            </td>
+
+            <td>
+
+                {{ $equipment->category }}
+
+            </td>
+
+            <td>
+
+                {{ $equipment->stock }}
+
+            </td>
 
             <td>
 
                 @if($equipment->status == 'available')
 
                     <span class="badge bg-success">
+
                         Available
+
                     </span>
 
                 @elseif($equipment->status == 'borrowed')
 
                     <span class="badge bg-warning text-dark">
+
                         Borrowed
+
                     </span>
 
                 @elseif($equipment->status == 'maintenance')
 
                     <span class="badge bg-danger">
+
                         Maintenance
+
                     </span>
 
                 @endif
@@ -74,9 +106,10 @@
             <td>
 
                 <a href="{{ route('equipments.edit', $equipment->id) }}"
-                   class="btn btn-warning btn-sm">
+                   class="btn btn-warning btn-sm me-1">
 
                     Edit
+
                 </a>
 
                 <form
@@ -93,6 +126,7 @@
                         onclick="return confirm('Yakin ingin menghapus equipment ini?')">
 
                         Delete
+
                     </button>
 
                 </form>
@@ -105,7 +139,8 @@
 
         <tr>
 
-            <td colspan="6" class="text-center">
+            <td colspan="6"
+                class="text-center">
 
                 Data equipment belum tersedia
 
