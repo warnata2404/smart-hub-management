@@ -27,7 +27,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Camera Sony A7',
                 'category' => 'Camera',
                 'stock' => 3,
-                'status' => 'available',
+                'status' => 'borrowed',
             ],
 
             [
@@ -35,7 +35,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Microphone Rode',
                 'category' => 'Audio',
                 'stock' => 8,
-                'status' => 'available',
+                'status' => 'maintenance',
             ],
 
             [
@@ -51,7 +51,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Monitor LG 24 Inch',
                 'category' => 'Monitor',
                 'stock' => 6,
-                'status' => 'available',
+                'status' => 'borrowed',
             ],
 
             [
@@ -59,7 +59,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Studio Light Godox',
                 'category' => 'Lighting',
                 'stock' => 4,
-                'status' => 'available',
+                'status' => 'maintenance',
             ],
 
             [
@@ -75,7 +75,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Drawing Tablet Wacom',
                 'category' => 'Design',
                 'stock' => 3,
-                'status' => 'available',
+                'status' => 'borrowed',
             ],
 
             [
@@ -91,7 +91,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'PC Editing Ryzen 7',
                 'category' => 'Computer',
                 'stock' => 2,
-                'status' => 'available',
+                'status' => 'maintenance',
             ],
 
         ];

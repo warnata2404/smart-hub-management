@@ -15,7 +15,13 @@ class BookingSeeder extends Seeder
     {
         $equipments = Equipment::all();
 
-        foreach ($equipments as $equipment) {
+        $statuses = [
+            'pending',
+            'approved',
+            'returned',
+        ];
+
+        foreach ($equipments as $index => $equipment) {
 
             Booking::create([
 
@@ -27,7 +33,7 @@ class BookingSeeder extends Seeder
 
                 'return_date' => now()->addDays(3),
 
-                'status' => 'pending',
+                'status' => $statuses[$index % 3],
 
             ]);
         }
