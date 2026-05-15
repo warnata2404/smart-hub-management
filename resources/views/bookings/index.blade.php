@@ -2,16 +2,28 @@
 
 @section('content')
 
+<h4 class="mb-4">Data Booking</h4>
+
 <a href="{{ route('bookings.create') }}"
    class="btn btn-primary mb-3">
 
     Tambah Booking
 </a>
 
-<table class="table table-bordered">
+@if(session('success'))
 
-    <thead>
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+
+@endif
+
+<table class="table table-bordered table-striped">
+
+    <thead class="table-dark">
+
         <tr>
+            <th width="50">ID</th>
             <th>User</th>
             <th>Equipment</th>
             <th>Tanggal Booking</th>
@@ -19,6 +31,7 @@
             <th>Status</th>
             <th width="200">Action</th>
         </tr>
+
     </thead>
 
     <tbody>
@@ -26,6 +39,8 @@
         @forelse ($bookings as $booking)
 
         <tr>
+
+            <td>{{ $booking->id }}</td>
 
             <td>{{ $booking->user->name }}</td>
 
@@ -35,7 +50,29 @@
 
             <td>{{ $booking->return_date }}</td>
 
-            <td>{{ $booking->status }}</td>
+            <td>
+
+                @if($booking->status == 'pending')
+
+                    <span class="badge bg-warning">
+                        Pending
+                    </span>
+
+                @elseif($booking->status == 'approved')
+
+                    <span class="badge bg-primary">
+                        Approved
+                    </span>
+
+                @elseif($booking->status == 'returned')
+
+                    <span class="badge bg-success">
+                        Returned
+                    </span>
+
+                @endif
+
+            </td>
 
             <td>
 
@@ -55,7 +92,8 @@
 
                     <button
                         type="submit"
-                        class="btn btn-danger btn-sm">
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('Yakin ingin menghapus booking ini?')">
 
                         Delete
                     </button>
@@ -69,9 +107,13 @@
         @empty
 
         <tr>
-            <td colspan="6" class="text-center">
+
+            <td colspan="7" class="text-center">
+
                 Data booking belum tersedia
+
             </td>
+
         </tr>
 
         @endforelse
