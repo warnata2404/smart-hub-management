@@ -28,7 +28,7 @@
             <th>Equipment</th>
             <th>Tanggal Booking</th>
             <th>Tanggal Kembali</th>
-            <th>Status</th>
+            <th width="150">Status</th>
             <th width="200">Action</th>
         </tr>
 
@@ -54,7 +54,7 @@
 
                 @if($booking->status == 'pending')
 
-                    <span class="badge bg-warning">
+                    <span class="badge bg-warning text-dark">
                         Pending
                     </span>
 

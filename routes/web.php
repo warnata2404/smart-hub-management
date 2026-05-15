@@ -32,4 +32,4 @@ Route::resource('equipments', EquipmentController::class);
 |--------------------------------------------------------------------------
 */
 
-Route::resource('bookings', BookingController::class);
+Route::resource('bookings', BookingController::class);  
