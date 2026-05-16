@@ -27,9 +27,11 @@
 
         <tr>
 
-            <th width="60">ID</th>
+            <th width="60">No</th>
 
             <th>User</th>
+
+            <th width="120">Code</th>
 
             <th>Equipment</th>
 
@@ -37,7 +39,7 @@
 
             <th width="180">Tanggal Kembali</th>
 
-            <th width="150">Status</th>
+            <th width="140">Status</th>
 
             <th width="200">Action</th>
 
@@ -53,13 +55,19 @@
 
             <td>
 
-                {{ $booking->id }}
+                {{ $loop->iteration }}
 
             </td>
 
             <td>
 
                 {{ $booking->user->name }}
+
+            </td>
+
+            <td>
+
+                {{ $booking->equipment->equipment_code }}
 
             </td>
 
@@ -147,7 +155,7 @@
 
         <tr>
 
-            <td colspan="7"
+            <td colspan="8"
                 class="text-center">
 
                 Data booking belum tersedia
