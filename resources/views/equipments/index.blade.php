@@ -27,7 +27,9 @@
 
         <tr>
 
-            <th width="100">Kode</th>
+            <th width="60">No</th>
+
+            <th width="120">Code</th>
 
             <th>Nama Equipment</th>
 
@@ -48,6 +50,12 @@
         @forelse($equipments as $equipment)
 
         <tr>
+
+            <td>
+
+                {{ $loop->iteration }}
+
+            </td>
 
             <td>
 
@@ -139,7 +147,7 @@
 
         <tr>
 
-            <td colspan="6"
+            <td colspan="7"
                 class="text-center">
 
                 Data equipment belum tersedia
