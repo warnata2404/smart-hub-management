@@ -7,9 +7,6 @@ use App\Models\Equipment;
 
 class EquipmentSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $equipments = [
@@ -19,7 +16,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Laptop Asus ROG',
                 'category' => 'Laptop',
                 'stock' => 5,
-                'status' => 'available',
+                'status' => 'borrowed'
             ],
 
             [
@@ -27,7 +24,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Camera Sony A7',
                 'category' => 'Camera',
                 'stock' => 3,
-                'status' => 'borrowed',
+                'status' => 'borrowed'
             ],
 
             [
@@ -35,7 +32,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Microphone Rode',
                 'category' => 'Audio',
                 'stock' => 8,
-                'status' => 'maintenance',
+                'status' => 'borrowed'
             ],
 
             [
@@ -43,7 +40,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Projector Epson',
                 'category' => 'Projector',
                 'stock' => 2,
-                'status' => 'available',
+                'status' => 'available'
             ],
 
             [
@@ -51,7 +48,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Monitor LG 24 Inch',
                 'category' => 'Monitor',
                 'stock' => 6,
-                'status' => 'borrowed',
+                'status' => 'available'
             ],
 
             [
@@ -59,7 +56,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Studio Light Godox',
                 'category' => 'Lighting',
                 'stock' => 4,
-                'status' => 'maintenance',
+                'status' => 'available'
             ],
 
             [
@@ -67,7 +64,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Tripod Canon',
                 'category' => 'Accessory',
                 'stock' => 10,
-                'status' => 'available',
+                'status' => 'available'
             ],
 
             [
@@ -75,7 +72,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Drawing Tablet Wacom',
                 'category' => 'Design',
                 'stock' => 3,
-                'status' => 'borrowed',
+                'status' => 'available'
             ],
 
             [
@@ -83,7 +80,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Speaker JBL',
                 'category' => 'Audio',
                 'stock' => 5,
-                'status' => 'available',
+                'status' => 'available'
             ],
 
             [
@@ -91,7 +88,7 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'PC Editing Ryzen 7',
                 'category' => 'Computer',
                 'stock' => 2,
-                'status' => 'maintenance',
+                'status' => 'maintenance'
             ],
 
         ];
