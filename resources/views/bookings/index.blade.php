@@ -31,8 +31,6 @@
 
             <th>User</th>
 
-            <th width="120">Code</th>
-
             <th>Equipment</th>
 
             <th width="180">Tanggal Booking</th>
@@ -68,11 +66,7 @@
             <td>
 
                 {{ $booking->equipment->equipment_code }}
-
-            </td>
-
-            <td>
-
+                -
                 {{ $booking->equipment->equipment_name }}
 
             </td>
@@ -155,7 +149,7 @@
 
         <tr>
 
-            <td colspan="8"
+            <td colspan="7"
                 class="text-center">
 
                 Data booking belum tersedia
